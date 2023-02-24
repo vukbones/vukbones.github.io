@@ -1,0 +1,52 @@
+*{
+    font-family: 'Poiret One', cursive;;
+}
+
+.title{
+    text-align: center;
+}
+
+.description{
+    text-align: center;
+}
+
+.container3{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.item{
+    height: 100px;
+    width: 100px;
+    border: solid black 1px;
+    align-items: center;
+    text-align: center;
+    transition: 0.6s;
+}
+
+.description > p{
+    margin: 10px;
+}
+
+.item:hover{
+    transform: scale(1.6);
+    z-index: 2;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 1);
+}
+
+
+img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.punteggio_label{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}

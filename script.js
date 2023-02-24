@@ -36,35 +36,35 @@ function roPaScRound(playerSelection, computerSelection){
 }
 
 
-function game(){
-    let numPlayerWon = 0;
-    let numComputerWon = 0;
-    for (let i = 0; i < 5; i++){
-        let userChoice = prompt("Rock, paper or scissors? ").toLowerCase();
-        let computer = getComputerChoice();
-        console.log(`You chose ${userChoice}`);
-        console.log(`Computer chose ${computer}`);
-        if (roPaScRound(userChoice, computer) === 1){
-            console.log("Player wins this one match!")
-            numPlayerWon++;
-        }
-        else if(roPaScRound(userChoice, computer) === 0){
-            console.log("Computer wins this one match!");
-            numComputerWon++;
-        }
-        else{
-            console.log("Draw match!");
-        }
-    }
-    if (numComputerWon > numPlayerWon){
-        return "Computer won!"
-    }
-    else if(numComputerWon < numPlayerWon){
-        return "Player won!"
-    }
-    else{
-        return "Tie game!"
-    }
-}
+// function game(){
+//     let numPlayerWon = 0;
+//     let numComputerWon = 0;
+//     for (let i = 0; i < 5; i++){
+//         let userChoice = prompt("Rock, paper or scissors? ").toLowerCase();
+//         let computer = getComputerChoice();
+//         console.log(`You chose ${userChoice}`);
+//         console.log(`Computer chose ${computer}`);
+//         if (roPaScRound(userChoice, computer) === 1){
+//             console.log("Player wins this one match!")
+//             numPlayerWon++;
+//         }
+//         else if(roPaScRound(userChoice, computer) === 0){
+//             console.log("Computer wins this one match!");
+//             numComputerWon++;
+//         }
+//         else{
+//             console.log("Draw match!");
+//         }
+//     }
+//     if (numComputerWon > numPlayerWon){
+//         return "Computer won!"
+//     }
+//     else if(numComputerWon < numPlayerWon){
+//         return "Player won!"
+//     }
+//     else{
+//         return "Tie game!"
+//     }
+// }
 
 console.log(game());
