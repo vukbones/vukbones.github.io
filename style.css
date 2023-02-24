@@ -27,7 +27,7 @@
 }
 
 .description > p{
-    margin: 10px;
+    margin: 5px;
 }
 
 .item:hover{
@@ -49,4 +49,9 @@ img{
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+}
+
+.punteggio{
+    display: flex;
+    justify-content: space-around;
 }

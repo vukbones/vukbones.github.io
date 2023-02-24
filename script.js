@@ -1,33 +1,39 @@
 function getComputerChoice () {
     computerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     if (computerChoice === 1){
-        return "rock";
+        return 1;
     }
     else if (computerChoice === 2){
-        return "paper";
+        return 2;
     }
     else{
-        return "scissors";
+        return 3;
     }
 }
 
 function roPaScRound(playerSelection, computerSelection){
-    if (playerSelection === "rock" && computerSelection === "paper"){        
+    if (playerSelection === 1 && computerSelection === 2){
+        punteggio_user++;        
         return 0;
     }
-    else if (playerSelection === "paper" && computerSelection === "rock"){
+    else if (playerSelection === 2 && computerSelection === 1){
+        punteggio_computer++;
         return 1;
     }
-    else if (playerSelection === "scissors" && computerSelection === "rock"){
+    else if (playerSelection === 3 && computerSelection === 1){
+        punteggio_user++;
         return 0;
     }
-    else if (playerSelection === "rock" && computerSelection === "scissors"){
+    else if (playerSelection === 1 && computerSelection === 3){
+        punteggio_computer++;
         return 1;
     }
-    else if (playerSelection === "scissors" && computerSelection === "paper"){   
+    else if (playerSelection === 3 && computerSelection === 2){   
+        punteggio_computer++;
         return 1;
     }
-    else if (playerSelection === "paper" && computerSelection === "scissors"){
+    else if (playerSelection === 2 && computerSelection === 3){
+        punteggio_user++;
         return 0;
     }
     else if (playerSelection === computerSelection){
@@ -67,4 +73,61 @@ function roPaScRound(playerSelection, computerSelection){
 //     }
 // }
 
-console.log(game());
+// console.log(game());
+
+let punteggio_user = 0;
+let punteggio_computer = 0;
+
+function azzerapunt(){
+    punteggio_user = 0;
+    punteggio_computer = 0;
+}
+
+function winner_check(azzera, punt_user, punt_comp){
+    if(punt_user == 5 || punt_comp == 5){
+        azzera();
+    }
+}
+
+
+const tu = document.getElementById("tu");
+
+
+const nemico = document.getElementById("nemico");
+
+const mano = document.getElementById("mano");
+
+mano.addEventListener("click", () =>{
+    winner_check(azzerapunt, punteggio_user, punteggio_computer);
+    let computer = getComputerChoice();
+    let user = 1
+    console.log(roPaScRound(user, computer));
+    console.log(punteggio_computer, punteggio_user)
+    tu.textContent = punteggio_user.toString();
+    nemico.textContent = punteggio_computer.toString();
+})
+
+const pugnale = document.getElementById("pugnale");
+
+pugnale.addEventListener("click", () =>{
+    winner_check(azzerapunt, punteggio_user, punteggio_computer);
+    let computer = getComputerChoice();
+    let user = 2
+    console.log(roPaScRound(user, computer));
+    tu.textContent = punteggio_user.toString();
+    nemico.textContent = punteggio_computer.toString();
+})
+
+const diavolo = document.getElementById("diavolo");
+
+diavolo.addEventListener("click", () =>{
+    winner_check(azzerapunt, punteggio_user, punteggio_computer);
+    let computer = getComputerChoice();
+    let user = 3
+    console.log(roPaScRound(user, computer));
+    tu.textContent = punteggio_user.toString();
+    nemico.textContent = punteggio_computer.toString();
+})
+
+
+
